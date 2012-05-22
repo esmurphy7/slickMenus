@@ -3,6 +3,11 @@ package slickMenus.elements;
 import java.util.LinkedList;
 import slickMenus.layouts.LayoutManager;
 
+/**
+ * A frame which can contain other elements. Organization of elements
+ * in the frame is controlled by the layout manager. A frame can hold 
+ * other frames inside.
+ */
 public class Frame extends Element {
 	
 	/**
@@ -27,7 +32,7 @@ public class Frame extends Element {
 	}
 
 	/**
-	 * Sets the active LayoutManager
+	 * Sets the active LayoutManager and updates layout
 	 */
 	public void setLayoutManager(LayoutManager layoutManager) {
 		_layoutManager = layoutManager;

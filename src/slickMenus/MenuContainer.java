@@ -7,8 +7,7 @@ import org.newdawn.slick.MouseListener;
 import slickMenus.elements.Element;
 
 /**
- * A container which consists of other elements. Organization of the elements
- * is controlled by a layout manager.
+ * A menu which can hold elements and responds to user input
  */
 public class MenuContainer extends slickMenus.elements.Frame{
 	

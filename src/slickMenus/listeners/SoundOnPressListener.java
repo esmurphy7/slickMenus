@@ -4,11 +4,21 @@ import org.newdawn.slick.Sound;
 
 import slickMenus.elements.Element;
 
-public class SoundOnClickListener implements ActionListener {
+/**
+ * Listener used to play a sound every time an element is pressed on
+ */
+public class SoundOnPressListener implements ActionListener {
 
+	/** 
+	 * Sound to play when element is pressed
+	 */
 	private Sound _sound;
 	
-	public SoundOnClickListener(Sound s) {
+	/**
+	 * SoundOnPressListener constructor specifying the sound to play
+	 * @param s slick sound object to play when element is pressed
+	 */
+	public SoundOnPressListener(Sound s) {
 		_sound = s;
 	}
 	
