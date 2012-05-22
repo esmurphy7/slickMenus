@@ -1,7 +1,5 @@
 package slickMenus.listeners;
 
-import org.newdawn.slick.GameContainer;
-
 import slickMenus.elements.Element;
 
 public class GrowOnHoverListener implements ActionListener {
