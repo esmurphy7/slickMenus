@@ -4,8 +4,6 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.MouseListener;
 
-import slickMenus.elements.Element;
-
 /**
  * A menu which can hold elements and responds to user input
  */
