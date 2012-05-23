@@ -31,14 +31,26 @@ public class MenuContainer extends slickMenus.elements.Frame{
 		_gc.getInput().addMouseListener(new MenuListener(this));
 	}
 	
+	/**
+	 * Sets MouseListener to accept input. Call when entering a state
+	 * containing this menu.
+	 */
 	public void enter() {
 		_acceptingInput = true;
 	}
 	
+	/**
+	 * Sets MouseListener to not accept input. Call when leaving a state
+	 * containing this menu.
+	 */
 	public void leave() {
 		_acceptingInput = false;
 	}
 	
+	/**
+	 * MouseListener for this MenuConainer. Notifies the elements in this 
+	 * MenuContainer of mouse input.
+	 */
 	private class MenuListener implements MouseListener {
 
 		private MenuContainer _container;
