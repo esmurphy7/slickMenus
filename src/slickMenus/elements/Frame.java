@@ -2,11 +2,12 @@ package slickMenus.elements;
 
 import java.util.LinkedList;
 import slickMenus.layouts.LayoutManager;
+import slickMenus.layouts.ManualLayout;
 
 /**
  * A frame which can contain other elements. Organization of elements
- * in the frame is controlled by the layout manager. A frame can hold 
- * other frames inside.
+ * in the frame is controlled by the layout manager. The default layout 
+ * manager is the manualLayout. A frame can hold other frames inside.
  */
 public class Frame extends Element {
 	
@@ -18,7 +19,7 @@ public class Frame extends Element {
 	/**
 	 * Active LayoutManager for this frame
 	 */
-	private LayoutManager _layoutManager;
+	private LayoutManager _layoutManager = new ManualLayout();
 	
 	/**
 	 * Draw this frame and its contents to the window.
