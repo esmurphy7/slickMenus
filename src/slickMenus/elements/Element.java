@@ -161,8 +161,21 @@ public abstract class Element {
 		return _padY;
 	}
 	
+	/**
+	 * Add an ActionListener to this element
+	 * @param listener ActionListener to add
+	 */
 	public void addActionListener(ActionListener listener) {
 		_listeners.add(listener);
+	}
+	
+	/**
+	 * Remove an ActionListener from this element. Only the first matching
+	 * listener will be removed.
+	 * @param listener ActionListener to remove
+	 */
+	public void removeActionlistener(ActionListener listener) {
+		_listeners.remove(listener);
 	}
 	
 	/**
