@@ -12,12 +12,14 @@ import slickMenus.listeners.ActionListener;
 public abstract class Element {
 	
 	/**
-	 * x coordinate of top left corner
+	 * x coordinate of top left corner relative to the top left corner
+	 * of the containing frame
 	 */
 	protected float _xPos;
 	
 	/**
-	 * y coordinate of top left corner
+	 * y coordinate of top left corner relative to the top left corner 
+	 * of the containing frame
 	 */
 	protected float _yPos;
 	
@@ -124,10 +126,12 @@ public abstract class Element {
 	
 	/**
 	 * Draw background image
+	 * @param frameX x coordinate of containing frame
+	 * @param frameY y coordinate of containing frame
 	 */
-	public void draw() {
-		if (_backgroundImage != null) _backgroundImage.draw(_xPos - (_scale - 1 ) * _width / 2,
-				_yPos - (_scale - 1) * _height / 2,
+	public void draw(float frameX, float frameY) {
+		if (_backgroundImage != null) _backgroundImage.draw(frameX + _xPos - (_scale - 1 ) * _width / 2,
+				frameY + _yPos - (_scale - 1) * _height / 2,
 				_scale);
 	}
 	
@@ -181,8 +185,8 @@ public abstract class Element {
 	/**
 	 * Calls mousePressed on each of this elements actionListener
 	 * @param button button which is pressed
-	 * @param x x position
-	 * @param y y position
+	 * @param x x position relative to containing frame
+	 * @param y y position relative to containing frame
 	 */
 	public void mousePressed(int button, int x, int y) {
 		for (ActionListener l : _listeners) {
@@ -193,8 +197,8 @@ public abstract class Element {
 	/**
 	 * Calls mouseReleased on each of this elements actionListeners
 	 * @param button button which is pressed
-	 * @param x x position
-	 * @param y y position
+	 * @param x x position relative to containing frame
+	 * @param y y position relative to containing frame
 	 */
 	public void mouseReleased(int button, int x, int y) {
 		for (ActionListener l : _listeners) {
@@ -204,10 +208,10 @@ public abstract class Element {
 	
 	/**
 	 * Calls mouseHover on each of this elements actionListeners
-	 * @param oldX
-	 * @param oldY
-	 * @param newX
-	 * @param newY
+	 * @param oldX relative to containing frame
+	 * @param oldY relative to containing frame
+	 * @param newX relative to containing frame
+	 * @param newY relative to containing frame
 	 */
 	public void mouseMoved(int oldX, int oldY, int newX, int newY) {
 		for (ActionListener l : _listeners) {

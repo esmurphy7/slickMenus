@@ -58,9 +58,9 @@ public class StringLabel extends Element {
 	 * Draw this StringLabel to the window
 	 */
 	@Override
-	public void draw() {
-		super.draw();
-		_font.drawString(_xPos, _yPos, _string, _color);
+	public void draw(float frameX, float frameY) {
+		super.draw(frameX, frameY);
+		_font.drawString(frameX + _xPos, frameY + _yPos, _string, _color);
 	}
 	
 	public void setString(String string) {

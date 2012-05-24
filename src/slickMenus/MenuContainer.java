@@ -48,6 +48,13 @@ public class MenuContainer extends slickMenus.elements.Frame{
 	}
 	
 	/**
+	 * Draw the contents of the menu
+	 */
+	public void draw() {
+		super.draw(0, 0);
+	}
+	
+	/**
 	 * MouseListener for this MenuConainer. Notifies the elements in this 
 	 * MenuContainer of mouse input.
 	 */

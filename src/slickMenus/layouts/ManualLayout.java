@@ -21,7 +21,7 @@ public class ManualLayout implements LayoutManager {
 	 * @return Returns 0 as the width and height of the element.
 	 */
 	@Override
-	public float[] updateLayout(LinkedList<Element> list, float x, float y) {
+	public float[] updateLayout(LinkedList<Element> list) {
 		return new float[] {0, 0};
 	}
 

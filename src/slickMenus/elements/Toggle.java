@@ -34,9 +34,10 @@ public class Toggle extends Element {
 	}
 	
 	@Override
-	public void draw() {
-		if (_state) _trueImage.draw(_xPos, _yPos);
-		else _falseImage.draw(_xPos, _yPos);
+	public void draw(float frameX, float frameY) {
+		super.draw(frameX, frameY);
+		if (_state) _trueImage.draw(frameX + _xPos, frameY +_yPos);
+		else _falseImage.draw(frameX + _xPos, frameY + _yPos);
 	}
 
 }

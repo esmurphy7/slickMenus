@@ -16,6 +16,6 @@ public interface LayoutManager {
 	 * @param y Y coordinate of top let corner
 	 * @return Returns the width and height of this layout
 	 */
-	public float[] updateLayout(LinkedList<Element> list, float x, float y);
+	public float[] updateLayout(LinkedList<Element> list);
 
 }

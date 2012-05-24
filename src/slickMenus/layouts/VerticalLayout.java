@@ -60,42 +60,39 @@ public class VerticalLayout implements LayoutManager {
 	 * @return Returns the width and height of this layout
 	 */
 	@Override
-	public float[] updateLayout(LinkedList<Element> list, float x, float y) {
+	public float[] updateLayout(LinkedList<Element> list) {
 		float width = 0f;
 		float height = 0f;
 		switch(_alignment) {
 		case LEFT: 
 			for (Element e: list) {
-				e.setPosY(y + e.getPadY());
+				e.setPosY(height + e.getPadY());
 				height += e.getHeight() + 2 * e.getPadY();
-				y += e.getHeight() + 2 * e.getPadY();
-				e.setPosX(x + e.getPadX());
+				e.setPosX(e.getPadX());
 				float tempWidth = e.getWidth() + 2 * e.getPadX();
 				if (tempWidth > width) width = tempWidth;
 			}
 		break;
 		case CENTER: 
 			for (Element e : list) {
-				e.setPosY(y + e.getPadY());
+				e.setPosY(height + e.getPadY());
 				height += e.getHeight() + 2 * e.getPadY();
-				y += e.getHeight() + 2 * e.getPadY();
 				float tempWidth = e.getWidth() + 2 * e.getPadX();
 				if (tempWidth > width) width = tempWidth;
 			}
 			for (Element e : list) {
-				e.setPosX(x + (width - e.getWidth()) / 2);
+				e.setPosX((width - e.getWidth()) / 2);
 			}
 			break;
 		case RIGHT: 
 			for (Element e : list) {
-				e.setPosY(y + e.getPadY());
+				e.setPosY(height + e.getPadY());
 				height += e.getHeight() + 2 * e.getPadY();
-				y += e.getHeight() + 2 * e.getPadY();
 				float tempWidth = e.getWidth() + 2 * e.getPadX();
 				if (tempWidth > width) width = tempWidth;
 			}
 			for (Element e : list) {
-				e.setPosX(x + width - (e.getWidth() + e.getPadX()));
+				e.setPosX(width - (e.getWidth() + e.getPadX()));
 			}
 			break;
 		default: break;
