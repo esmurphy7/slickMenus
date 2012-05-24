@@ -3,6 +3,7 @@ package slickMenus.elements;
 import java.util.LinkedList;
 import slickMenus.layouts.LayoutManager;
 import slickMenus.layouts.ManualLayout;
+import slickMenus.listeners.ActionListener;
 
 /**
  * A frame which can contain other elements. Organization of elements
@@ -61,6 +62,18 @@ public class Frame extends Element {
 	public LinkedList<Element> getList() {
 		return _list;
 	}
+	
+	/**
+	 * Adds an ActionListener to all elements contained in this frame, 
+	 * but not to this frame itself.
+	 * @param listener ActionListener to add
+	 */
+	public void addActionListenerAll(ActionListener listener) {
+		for (Element e : _list) {
+			e.addActionListener(listener);
+		}
+	}
+	
 	/**
 	 * Calls mousePressed on each of this frame's actionListener and 
 	 * each element in this frame
