@@ -39,7 +39,6 @@ public class GrowOnHoverListener implements ActionListener {
 
 	@Override
 	public void mouseMoved(int oldX, int oldY, int newX, int newY, Element e) {
-		e.setIsOver(e.inRect(newX, newY));
 	}
 
 	@Override

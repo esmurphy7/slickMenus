@@ -207,18 +207,24 @@ public abstract class Element {
 	}
 	
 	/**
-	 * Calls mouseHover on each of this elements actionListeners
+	 * Calls mouseHover on each of this elements actionListeners and sets the
+	 * value of _isOver.
 	 * @param oldX relative to containing frame
 	 * @param oldY relative to containing frame
 	 * @param newX relative to containing frame
 	 * @param newY relative to containing frame
 	 */
 	public void mouseMoved(int oldX, int oldY, int newX, int newY) {
+		_isOver = inRect(newX, newY);
 		for (ActionListener l : _listeners) {
 			l.mouseMoved(oldX, oldY, newX, newY, this);
 		}
 	}
 	
+	/**
+	 * Calls update on each of this elements ActionListeners
+	 * @param delta Time since last frame in milliseconds.
+	 */
 	public void update(int delta) {
 		for (ActionListener l :_listeners) {
 			l.update(delta, this);
@@ -226,21 +232,22 @@ public abstract class Element {
 	}
 	
 	/**
-	 * Checks if position is in this element
-	 * @param xPos
-	 * @param yPos
-	 * @return 
+	 * Checks if given coordinates are in this element
+	 * @param xPos x coordinate
+	 * @param yPos y coordinate
+	 * @return Returns whether the given coordinates are over this element or not.
 	 */
 	public boolean inRect(int xPos, int yPos) {
 		return ((xPos > _xPos && xPos < _xPos + _width) && (yPos > _yPos && yPos < _yPos + _height));
 	}
 	
+	/**
+	 * Returns a boolean value dependent on whether the mouse is currently 
+	 * over this element.
+	 * @return The value of _isOver
+	 */
 	public boolean isOver() {
 		return _isOver;
-	}
-	
-	public void setIsOver(boolean val) {
-		_isOver = val;
 	}
 
 }
