@@ -95,6 +95,22 @@ public abstract class Element {
 		_yPos = y;
 	}
 	
+	/**
+	 * Get x position of this element relative to it's containing frame
+	 * @return _xPos
+	 */
+	public float getPosX() {
+		return _xPos;
+	}
+	
+	/**
+	 * Get y position of this element relative to it's containing frame
+	 * @return _yPos
+	 */
+	public float getPosY() {
+		return _yPos;
+	}
+	
 	public void setPosition(float x, float y) {
 		_xPos = x;
 		_yPos = y;
