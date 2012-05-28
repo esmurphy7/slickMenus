@@ -5,7 +5,12 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.MouseListener;
 
 /**
- * A menu which can hold elements and responds to user input
+ * A menu which can hold elements and responds to user input. Creating a 
+ * MenuContainer also creates a MouseListener which is added to the game 
+ * container. The enter and leave method should be called in the enter and 
+ * leave method of the state the menu is in in order to begin receiving 
+ * input when the state is entered and to stop when the program leaves 
+ * the state.
  */
 public class MenuContainer extends slickMenus.elements.Frame{
 	
